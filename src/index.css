@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .md-preview {
+    @apply text-slate-800 dark:text-slate-200;
+  }
+
+  .md-preview > * + * {
+    @apply mt-4;
+  }
+
+  .md-preview h1,
+  .md-preview h2,
+  .md-preview h3,
+  .md-preview h4,
+  .md-preview h5,
+  .md-preview h6 {
+    @apply font-semibold tracking-tight text-slate-900 dark:text-slate-50;
+  }
+
+  .md-preview h1 {
+    @apply text-3xl;
+  }
+
+  .md-preview h2 {
+    @apply text-2xl;
+  }
+
+  .md-preview h3 {
+    @apply text-xl;
+  }
+
+  .md-preview p {
+    @apply leading-7;
+  }
+
+  .md-preview a {
+    @apply text-indigo-600 underline decoration-indigo-600/40 underline-offset-2 transition-colors hover:text-indigo-700 hover:decoration-indigo-700 dark:text-indigo-400 dark:decoration-indigo-400/40 dark:hover:text-indigo-300 dark:hover:decoration-indigo-300;
+  }
+
+  .md-preview ul,
+  .md-preview ol {
+    @apply pl-5;
+  }
+
+  .md-preview ul {
+    @apply list-disc;
+  }
+
+  .md-preview ol {
+    @apply list-decimal;
+  }
+
+  .md-preview li + li {
+    @apply mt-1;
+  }
+
+  .md-preview blockquote {
+    @apply border-l-4 border-indigo-300 bg-indigo-50/50 pl-4 italic text-slate-700 dark:border-indigo-700 dark:bg-indigo-950/30 dark:text-slate-300;
+  }
+
+  .md-preview code {
+    @apply rounded bg-slate-100 px-1 py-0.5 font-mono text-sm text-rose-600 dark:bg-slate-800 dark:text-rose-400;
+  }
+
+  .md-preview pre {
+    @apply overflow-x-auto rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900;
+  }
+
+  .md-preview pre code {
+    @apply bg-transparent p-0 text-sm text-slate-800 dark:text-slate-200;
+  }
+
+  .md-preview hr {
+    @apply border-slate-200 dark:border-slate-800;
+  }
+
+  .md-preview table {
+    @apply w-full border-collapse text-left text-sm;
+  }
+
+  .md-preview th,
+  .md-preview td {
+    @apply border border-slate-200 px-3 py-2 dark:border-slate-800;
+  }
+
+  .md-preview th {
+    @apply bg-slate-50 font-semibold dark:bg-slate-900;
+  }
+
+  .md-preview img {
+    @apply max-w-full rounded-lg;
+  }
+}
